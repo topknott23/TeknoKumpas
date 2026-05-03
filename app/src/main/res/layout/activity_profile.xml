@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <View
+        android:id="@+id/rlTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_solid_button" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnBackToDashboard"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:text="Student Profile"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <LinearLayout
+                android:id="@+id/llProfileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_input_field"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:paddingTop="60dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tvDisplayUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Full Name]"
+                    android:textColor="#102A43"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="CIT-U Student"
+                    android:textColor="#0F5D6B"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F8FAFC"
+                    android:padding="16dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="First Name" android:textColor="#627D98" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvFirstName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[First]" android:textColor="#102A43" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Middle Name / Initial" android:textColor="#627D98" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvMiddleName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[Middle]" android:textColor="#102A43" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Last Name" android:textColor="#627D98" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvLastName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[Last]" android:textColor="#102A43" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="School Email" android:textColor="#627D98" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[Email]" android:textColor="#0F5D6B" android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="#FFFFFF"
+                android:elevation="8dp"
+                android:src="@android:drawable/ic_menu_camera"
+                android:padding="20dp"
+                app:tint="#0F5D6B" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+<!--   diri nako gibutang-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBackToDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/bg_input_field"
+        android:backgroundTint="#FFFFFF"
+        android:text="Back to Dashboard"
+        android:textAllCaps="false"
+        android:textColor="#102A43"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="4dp"/>
+
+</RelativeLayout>
