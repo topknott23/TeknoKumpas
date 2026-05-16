@@ -14,6 +14,8 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".dashboard.DashboardActivity" />
         <activity android:name=".profile.ProfileActivity" />
+        <activity android:name=".directory.DirectoryActivity" />
+        <activity android:name=".directory.EditLocationActivity" />
     </application>
 
 </manifest>

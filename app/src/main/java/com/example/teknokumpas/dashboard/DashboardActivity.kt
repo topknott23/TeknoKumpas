@@ -43,8 +43,9 @@ class DashboardActivity : AppCompatActivity(), DashboardContract.View {
         startActivity(intent)
     }
 
-    override fun showMapMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    override fun navigateToDirectory() {
+        val intent = Intent(this, com.example.teknokumpas.directory.DirectoryActivity::class.java)
+        startActivity(intent)
     }
 
     override fun performLogout() {

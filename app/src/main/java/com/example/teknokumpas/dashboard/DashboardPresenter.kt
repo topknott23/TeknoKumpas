@@ -6,12 +6,10 @@ class DashboardPresenter(private val view: DashboardContract.View) : DashboardCo
     }
 
     override fun onMapClicked() {
-        view.showMapMessage("Campus Map feature coming soon!")
+        view.navigateToDirectory()
     }
 
     override fun onLogoutClicked() {
         view.performLogout()
     }
-
-
 }
