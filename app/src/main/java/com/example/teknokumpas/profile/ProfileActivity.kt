@@ -23,6 +23,16 @@ class ProfileActivity : AppCompatActivity(), ProfileContract.View {
         btnBack.setOnClickListener {
             presenter.onBackClicked()
         }
+        val btnBackBottom = findViewById<android.widget.Button>(R.id.btnBackToDashboard)
+
+        btnBackBottom.setOnClickListener {
+            finish()
+        }
+        val btnBackTop = findViewById<android.widget.TextView>(R.id.btnBackProfileTop)
+
+        btnBackTop.setOnClickListener {
+            finish()
+        }
     }
 
     override fun displayUserData(fullName: String, firstName: String, middleName: String, lastName: String, email: String) {

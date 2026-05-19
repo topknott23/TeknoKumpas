@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.TeknoKumpas"
         tools:targetApi="31">
         <activity android:name=".login.LoginActivity" android:exported="true">
@@ -16,6 +19,7 @@
         <activity android:name=".profile.ProfileActivity" />
         <activity android:name=".directory.DirectoryActivity" />
         <activity android:name=".directory.EditLocationActivity" />
+        <activity android:name=".directory.NavigationActivity" />
     </application>
 
 </manifest>

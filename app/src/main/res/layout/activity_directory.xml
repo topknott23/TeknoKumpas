@@ -10,7 +10,19 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_solid_button"
         android:padding="24dp"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnBackDirectory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="◁ Back"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,11 +32,35 @@
             android:fontFamily="sans-serif-black" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/llHeader"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Search buildings or labs..."
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="#102A43"
+        android:maxLines="1"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No locations found."
+        android:textColor="#627D98"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
     <ListView
         android:id="@+id/lvDirectory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/llHeader"
+        android:layout_below="@id/etSearch"
         android:layout_above="@id/btnAdd"
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp"

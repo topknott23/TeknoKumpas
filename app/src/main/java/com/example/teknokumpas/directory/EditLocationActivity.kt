@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.teknokumpas.R
@@ -18,6 +19,7 @@ class EditLocationActivity : AppCompatActivity() {
         val etDesc = findViewById<EditText>(R.id.etEditDesc)
         val btnUpdate = findViewById<Button>(R.id.btnUpdate)
         val btnDelete = findViewById<Button>(R.id.btnDelete)
+        val btnBack = findViewById<TextView>(R.id.btnBackEdit)
 
         val position = intent.getIntExtra("position", -1)
         val currentName = intent.getStringExtra("name")
@@ -25,6 +27,10 @@ class EditLocationActivity : AppCompatActivity() {
 
         etName.setText(currentName)
         etDesc.setText(currentDesc)
+
+        btnBack.setOnClickListener {
+            finish() // Instantly closes the edit screen and goes back
+        }
 
         btnUpdate.setOnClickListener {
             val updatedName = etName.text.toString().trim()

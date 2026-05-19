@@ -33,6 +33,20 @@
             android:fontFamily="sans-serif-black" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvDestination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"/>
+
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"

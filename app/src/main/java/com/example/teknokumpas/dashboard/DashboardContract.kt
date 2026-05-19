@@ -3,7 +3,7 @@ package com.example.teknokumpas.dashboard
 interface DashboardContract {
     interface View {
         fun navigateToProfile(userName: String)
-        fun navigateToDirectory()
+        fun navigateToDirectory() 
         fun performLogout()
     }
 
