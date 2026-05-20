@@ -2,25 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_input_field"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/bg_minimal_card"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/tvLocName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Location Name"
-        android:textColor="#102A43"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_minimal_icon_container"
+        android:backgroundTint="@color/minimal_tint_teal"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_modern_map"
+            android:tint="@color/minimal_accent" />
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/tvLocDesc"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Location Description"
-        android:textColor="#627D98"
-        android:textSize="14sp" />
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLocName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location Name"
+            android:textColor="@color/minimal_text_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/tvLocDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Location Description"
+            android:textColor="@color/minimal_text_secondary"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -3,72 +3,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F0F4F8"
-    android:padding="24dp">
+    android:background="@color/minimal_bg"
+    android:padding="32dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/btnBackEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="◁ Back"
-            android:textColor="#627D98"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:text=""
+            android:gravity="center_vertical"
+            android:drawableStart="@drawable/ic_modern_back"
+            android:drawableTint="@color/minimal_text_primary"
             android:layout_marginEnd="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Location"
-            android:textColor="#102A43"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textColor="@color/minimal_text_primary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium" />
     </LinearLayout>
 
     <EditText
         android:id="@+id/etEditName"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/bg_input_field"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_minimal_input"
         android:hint="Location Name"
-        android:padding="16dp"
+        android:textColorHint="@color/minimal_text_secondary"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:textColor="#102A43" />
+        android:drawableStart="@drawable/ic_modern_map"
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/minimal_text_secondary"
+        android:textColor="@color/minimal_text_primary" />
 
     <EditText
         android:id="@+id/etEditDesc"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/bg_input_field"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_minimal_input"
         android:hint="Description"
-        android:padding="16dp"
+        android:textColorHint="@color/minimal_text_secondary"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:textColor="#102A43" />
+        android:drawableStart="@drawable/ic_modern_edit"
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/minimal_text_secondary"
+        android:textColor="@color/minimal_text_primary" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/bg_solid_button"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_minimal_button"
         android:text="Update Location"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginBottom="16dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#D32F2F"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_minimal_outline_button"
         android:text="Delete Location"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"/>
+        android:textAllCaps="false"
+        android:textColor="@color/color_error"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:drawableStart="@drawable/ic_modern_delete"
+        android:drawablePadding="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
 
 </LinearLayout>

@@ -2,68 +2,83 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8"> <LinearLayout
-    android:id="@+id/llHeader"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="24dp"
-    android:gravity="center_vertical"
-    android:elevation="0dp"
-    android:background="#F0F4F8">
+    android:background="@color/minimal_bg">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Welcome back,"
-            android:textColor="#78909C"
-            android:textSize="14sp" />
-        <TextView
-            android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello!"
-            android:textColor="#102A43"
-            android:textSize="26sp"
-            android:fontFamily="sans-serif-black" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome back,"
+                android:textColor="@color/minimal_text_secondary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif" />
+            
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Hello!"
+                android:textColor="@color/minimal_text_primary"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-light" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_minimal_icon_container"
+            android:backgroundTint="@color/minimal_tint_teal"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_modern_compass"
+                android:tint="@color/minimal_accent" />
+        </FrameLayout>
     </LinearLayout>
 
     <TextView
         android:id="@+id/tvDestination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_below="@id/llHeader"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_minimal_card"
+        android:textColor="@color/minimal_text_primary"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
         android:padding="16dp"
-        android:elevation="4dp"
         android:textAlignment="center"
-        android:visibility="gone"
-        android:layout_marginBottom="16dp"/>
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bg_input_field"
-        android:padding="12dp"
-        android:src="@android:drawable/ic_menu_compass"
-        android:tint="#0F5D6B"/>
-</LinearLayout>
+        android:visibility="gone"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/llHeader"
+        android:layout_below="@id/tvDestination"
         android:layout_above="@id/btnLogout"
         android:clipToPadding="false"
         android:paddingStart="24dp"
-        android:paddingEnd="24dp">
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,8 +89,7 @@
                 android:id="@+id/rlMap"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:background="@drawable/bg_solid_button"
-                android:elevation="8dp"
+                android:background="@drawable/bg_minimal_card"
                 android:padding="24dp"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="8dp">
@@ -85,39 +99,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Campus\nNavigator"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/minimal_text_primary"
                     android:textSize="28sp"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="sans-serif-light"
                     android:lineSpacingExtra="-4dp"/>
 
                 <TextView
-                    android:layout_width="180dp"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/mapTitle"
                     android:layout_marginTop="12dp"
-                    android:text="Find your next class in CIT-U instantly."
-                    android:textColor="#B3E5FC"
-                    android:textSize="14sp" />
+                    android:text="Find your next class."
+                    android:textColor="@color/minimal_text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif" />
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@android:drawable/ic_dialog_map"
-                    android:tint="#FFFFFF"
-                    android:alpha="0.2"/>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <FrameLayout
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/bg_input_field"
-                    android:backgroundTint="#FFFFFF"
-                    android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_directions"
-                    android:tint="#0F5D6B"/>
+                    android:background="@drawable/bg_minimal_icon_container"
+                    android:backgroundTint="@color/minimal_tint_teal"
+                    android:padding="8dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_modern_compass"
+                        android:tint="@color/minimal_accent" />
+                </FrameLayout>
             </RelativeLayout>
 
             <LinearLayout
@@ -132,15 +142,42 @@
                     android:layout_height="140dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/bg_input_field"
-                    android:elevation="2dp"
+                    android:background="@drawable/bg_minimal_card"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <View android:layout_width="50dp" android:layout_height="50dp" android:background="@drawable/bg_input_field" android:backgroundTint="#E1F5FE" />
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginTop="-37dp" android:src="@android:drawable/ic_menu_myplaces" android:tint="#0F5D6B"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Profile" android:textColor="#102A43" android:textSize="16sp" android:textStyle="bold"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="View Details" android:textColor="#829AB1" android:textSize="12sp" />
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_minimal_icon_container"
+                        android:backgroundTint="@color/minimal_tint_blue"
+                        android:padding="12dp">
+                        <ImageView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="match_parent" 
+                            android:src="@drawable/ic_modern_person" 
+                            android:tint="@color/minimal_accent"/>
+                    </FrameLayout>
+
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:layout_marginTop="16dp" 
+                        android:text="Profile" 
+                        android:textColor="@color/minimal_text_primary" 
+                        android:textSize="16sp" 
+                        android:fontFamily="sans-serif-medium"/>
+                    
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="View Details" 
+                        android:textColor="@color/minimal_text_secondary" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,15 +185,42 @@
                     android:layout_height="140dp"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_input_field"
-                    android:elevation="2dp"
+                    android:background="@drawable/bg_minimal_card"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <View android:layout_width="50dp" android:layout_height="50dp" android:background="@drawable/bg_input_field" android:backgroundTint="#FFF3E0" />
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginTop="-37dp" android:src="@android:drawable/ic_menu_sort_by_size" android:tint="#E65100"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Grades" android:textColor="#102A43" android:textSize="16sp" android:textStyle="bold"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Coming Soon" android:textColor="#829AB1" android:textSize="12sp" />
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_minimal_icon_container"
+                        android:backgroundTint="@color/minimal_tint_orange"
+                        android:padding="12dp">
+                        <ImageView 
+                            android:layout_width="match_parent" 
+                            android:layout_height="match_parent" 
+                            android:src="@drawable/ic_modern_grades" 
+                            android:tint="#F57C00"/>
+                    </FrameLayout>
+
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:layout_marginTop="16dp" 
+                        android:text="Grades" 
+                        android:textColor="@color/minimal_text_primary" 
+                        android:textSize="16sp" 
+                        android:fontFamily="sans-serif-medium"/>
+                    
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="Coming Soon" 
+                        android:textColor="@color/minimal_text_secondary" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -166,18 +230,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/bg_input_field"
-        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/bg_minimal_outline_button"
         android:text="Sign Out"
         android:textAllCaps="false"
-        android:textColor="#D32F2F"
+        android:textColor="@color/minimal_text_primary"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:elevation="4dp"/>
+        android:fontFamily="sans-serif-medium" />
 
 </RelativeLayout>

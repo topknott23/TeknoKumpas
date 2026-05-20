@@ -2,47 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8">
+    android:background="@color/minimal_bg">
 
     <LinearLayout
         android:id="@+id/llHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_solid_button"
-        android:padding="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:background="@color/minimal_surface">
 
         <TextView
             android:id="@+id/btnBackDirectory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="◁ Back"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:text=""
+            android:drawableStart="@drawable/ic_modern_back"
+            android:drawableTint="@color/minimal_text_primary"
             android:layout_marginEnd="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Campus Directory"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:fontFamily="sans-serif-black" />
+            android:textColor="@color/minimal_text_primary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium" />
     </LinearLayout>
+    
+    <View
+        android:id="@+id/vHeaderDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/llHeader"
+        android:background="@color/minimal_border"/>
 
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/llHeader"
+        android:layout_height="56dp"
+        android:layout_below="@id/vHeaderDivider"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_input_field"
+        android:background="@drawable/bg_minimal_input"
         android:hint="Search buildings or labs..."
+        android:textColorHint="@color/minimal_text_secondary"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="#102A43"
+        android:drawableStart="@drawable/ic_modern_search"
+        android:drawablePadding="12dp"
+        android:drawableTint="@color/minimal_text_secondary"
+        android:textColor="@color/minimal_text_primary"
         android:maxLines="1"
         android:inputType="text"/>
 
@@ -52,8 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="No locations found."
-        android:textColor="#627D98"
-        android:textSize="18sp"
+        android:textColor="@color/minimal_text_secondary"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
         android:visibility="gone"/>
 
     <ListView
@@ -63,21 +77,25 @@
         android:layout_below="@id/etSearch"
         android:layout_above="@id/btnAdd"
         android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"
+        android:dividerHeight="12dp"
         android:padding="16dp"
         android:clipToPadding="false"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:background="@drawable/bg_solid_button"
+        android:layout_margin="24dp"
+        android:background="@drawable/bg_minimal_button"
         android:text="Add Custom Location"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:elevation="4dp"/>
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:drawableStart="@drawable/ic_modern_add"
+        android:drawablePadding="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
 </RelativeLayout>

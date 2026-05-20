@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#F0F4F8">
+    android:background="@color/minimal_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,24 +11,30 @@
         android:orientation="vertical"
         android:padding="32dp">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:src="@android:drawable/ic_menu_compass"
-            android:tint="#0F5D6B"/>
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_minimal_icon_container"
+            android:backgroundTint="@color/minimal_tint_teal"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_modern_compass"
+                android:tint="@color/minimal_accent" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Create\nAccount"
-            android:textColor="#102A43"
-            android:textSize="36sp"
-            android:lineSpacingExtra="-8dp" />
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Create Account"
+            android:textColor="@color/minimal_text_primary"
+            android:textSize="32sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,59 +45,63 @@
             <EditText
                 android:id="@+id/etFullName"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:background="@drawable/bg_input_field"
-                android:elevation="2dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_minimal_input"
                 android:hint="Full Name"
                 android:inputType="textPersonName"
-                android:textColor="#102A43"
-                android:textColorHint="#9FB3C8"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp" />
+                android:textColor="@color/minimal_text_primary"
+                android:textColorHint="@color/minimal_text_secondary"
+                android:drawableStart="@drawable/ic_modern_person"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/minimal_text_secondary"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
             <EditText
                 android:id="@+id/etStudentId"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="56dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/bg_input_field"
-                android:elevation="2dp"
-                android:hint="Student ID (XX-XXXX-XXX)"
+                android:background="@drawable/bg_minimal_input"
+                android:hint="Student ID"
                 android:inputType="text"
-                android:textColor="#102A43"
-                android:textColorHint="#9FB3C8"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp" />
+                android:textColor="@color/minimal_text_primary"
+                android:textColorHint="@color/minimal_text_secondary"
+                android:drawableStart="@drawable/ic_modern_card"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/minimal_text_secondary"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="56dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/bg_input_field"
-                android:elevation="2dp"
+                android:background="@drawable/bg_minimal_input"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColor="#102A43"
-                android:textColorHint="#9FB3C8"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:drawableEnd="@android:drawable/ic_menu_view" />
+                android:textColor="@color/minimal_text_primary"
+                android:textColorHint="@color/minimal_text_secondary"
+                android:drawableStart="@drawable/ic_modern_lock"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/minimal_text_secondary"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="56dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/bg_solid_button"
+            android:background="@drawable/bg_minimal_button"
             android:text="Sign Up"
             android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:elevation="4dp"/>
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -105,15 +115,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account? "
-                android:textColor="#627D98" />
+                android:textColor="@color/minimal_text_secondary"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Log In"
-                android:textColor="#0F5D6B"
-                android:textStyle="bold" />
+                android:textColor="@color/minimal_text_primary"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp" />
         </LinearLayout>
 
     </LinearLayout>

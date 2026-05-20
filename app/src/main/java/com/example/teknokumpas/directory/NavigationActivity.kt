@@ -10,33 +10,40 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
+class NavigationActivity : AppCompatActivity(), OnMapReadyCallback, NavigationContract.View {
 
     private lateinit var mMap: GoogleMap
-    private var destinationName: String = ""
+    private lateinit var presenter: NavigationContract.Presenter
+
+    private var targetLat: Double = 0.0
+    private var targetLng: Double = 0.0
+    private var markerTitle: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
 
-        destinationName = intent.getStringExtra("DESTINATION_NAME") ?: "CIT-U"
+        presenter = NavigationPresenter(this)
+
+        val destinationName = intent.getStringExtra("DESTINATION_NAME") ?: "CIT-U"
+        presenter.loadDestinationCoordinates(destinationName)
 
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
+    override fun displayDestination(latitude: Double, longitude: Double, title: String) {
+        targetLat = latitude
+        targetLng = longitude
+        markerTitle = title
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        val destinationCoordinates = when (destinationName) {
-            "NGE Building" -> LatLng(10.2951, 123.8815)
-            "GLE Building" -> LatLng(10.2958, 123.8809)
-            "SAL Building" -> LatLng(10.2954, 123.8812)
-            else -> LatLng(10.2957, 123.8811)
-        }
-
-        mMap.addMarker(MarkerOptions().position(destinationCoordinates).title(destinationName))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(destinationCoordinates, 18.5f))
+        val destination = LatLng(targetLat, targetLng)
+        mMap.addMarker(MarkerOptions().position(destination).title(markerTitle))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(destination, 18.5f))
     }
 }

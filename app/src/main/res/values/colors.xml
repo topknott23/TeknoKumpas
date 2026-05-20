@@ -2,5 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="tekno_teal">#0F5D6B</color>
+    
+    <!-- Minimalist Design System Tokens -->
+    <color name="minimal_bg">#FAFAFA</color>
+    <color name="minimal_surface">#FFFFFF</color>
+    <color name="minimal_text_primary">#111111</color>
+    <color name="minimal_text_secondary">#757575</color>
+    <color name="minimal_border">#E0E0E0</color>
+    
+    <!-- Minimalist Accent Colors (Added for Life) -->
+    <color name="minimal_accent">#0F5D6B</color> <!-- Deep sophisticated teal -->
+    <color name="minimal_tint_blue">#F0F8FF</color>
+    <color name="minimal_tint_orange">#FFF8E1</color>
+    <color name="minimal_tint_teal">#E0F2F1</color>
+    <color name="minimal_tint_red">#FFEBEE</color>
+    
+    <color name="color_error">#D32F2F</color>
+    <color name="color_success">#2E7D32</color>
 </resources>
